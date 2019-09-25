@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>blog</title>
+</head>
+<body>
+    <h1>welcome</h1>
+    <hr>
+        {%for post in posts%}
+            <a href="{%url 'blog:post' post.slug%}">{{post.title}}</a>
+            <p style="font-size: 16pt;font-weight: bold;">{{post.title}}</p><br>
+            <p style="font-size: 10pt;letter-spacing: 1pt;">{{post.body}}</p><br>
+            <hr>
+        {%endfor%}
+    <h3>{{now}}</h3>
+</body>
+</html>
