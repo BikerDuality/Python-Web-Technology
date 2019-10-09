@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{post.title}}</title>
-</head>
-<body>
-    <h1>{{post.title}}</h1>
-    <hr>
-        <p>{{post.body}}</p><br>
-    <hr>
-    <h3>{{post.pub_date}}</h3>
+{% extends 'base.html' %}
+{% block title%}post:{{post.slug}}{% endblock %}
+{% block headmessage %}
+    <h3>{{post.title}}</a>
     <a href="{%url 'blog:homepage'%}">homepage</a>
-</body>
-</html>
+{% endblock %}
+{% block content %}
+    <p style='font-size: 12pt;letter-spacing:2pt;'>
+        {{post.body}}</a>
+    </p>
+    {% include 'like.html' %}
+{% endblock %}

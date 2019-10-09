@@ -1,0 +1,56 @@
+<!-- base.html-->
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='utf-8'>
+ <title>
+   {% block title %}{% endblock %}
+ </title>
+<!--使用block指令设置替换区域名称和位置-->
+<link rel="stylesheet"
+href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script  src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script  src=
+"http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class='container-fluid'> <!-- container-fluid自动设置为外层容器的100%-->
+  {% include 'header.html' %}<!--使用inclue指令导入指定的模板文件-->
+   <div class='row'> <!--row是容器，网格样式要放在row容器里面-->
+            <div class='col-sm-4 col-md-4'>  <!--与在同一row中的其他div划分所占列比例，共分4+8=12列，此div占4列-->
+                <div class='panel panel-default'>
+                    <div class='panel-heading'>
+                        <h3>
+                            MENU
+                        </h3>
+                    </div>
+                    <div class='panel-body'>
+                        <div class='list-group'>
+                          <a href="{%url 'blog:homepage'%}" class='list-group-item'>HOME</a>
+                          <a href="/admin" class='list-group-item'>管理页面 </a>
+                          <a href="{%url 'blog:homepage'%}" class='list-group-item'>实时新闻</a>
+                          <a href="{%url 'blog:homepage'%}" class='list-group-item'>电视新闻</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-8 col-md-8'>
+                <div class='panel panel-default'>
+                    <div class='panel-heading'>
+                        {% block headmessage %} {% endblock %}
+                    </div>
+                    <div class='panel-body'>
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class='panel-footer'>
+                        {% include 'footer.html' %}
+                    </div>
+                </div>
+            </div>
+         </div>
+  </div>
+
+
+</body>
+</html>

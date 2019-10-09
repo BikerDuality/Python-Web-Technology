@@ -9,6 +9,7 @@ class Post(models.Model):
     slug=models.CharField(max_length=200)
     body=models.TextField()
     pub_date=models.DateTimeField(default=timezone.now)
+    like_count=models.IntegerField(default=0)
 
     class Meta:
         ordering=('-pub_date',)

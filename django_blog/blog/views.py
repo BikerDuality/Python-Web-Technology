@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
 from django.template import loader
 from django.shortcuts import get_object_or_404
 import datetime
@@ -18,3 +19,14 @@ def show_post(request,post_name):
     post=get_object_or_404(Post,slug=post_name)
     html=template.render(locals()).encode()
     return HttpResponse(html)
+
+def post_like_post(request,post_name):
+    post=get_object_or_404(Post,slug=post_name)
+    post.like_count+=1
+    post.save()
+    return HttpResponseRedirect(reverse('blog:post', args=(post_name,)))
+def post_dislike_post(request,post_name):
+    post=get_object_or_404(Post,slug=post_name)
+    post.like_count-=1
+    post.save()
+    return HttpResponseRedirect(reverse('blog:post', args=(post_name,)))

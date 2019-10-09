@@ -1,0 +1,9 @@
+{% block footer %}
+	{% if now %}
+		<p>{{now}}</p>
+	{% elif post.pub_date %}
+		<p>{{post.pub_date}}</p>
+	{% else %}
+		<p>everything is form internet</p>
+	{% endif %}
+{% endblock %}
