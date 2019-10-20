@@ -1,4 +1,4 @@
-"""django_blog URL Configuration
+"""blog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -11,7 +11,7 @@ Class-based views
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    2. Add a URL to urlpatterns:  path('mainsite/', include('mainsite.urls'))
 """
 from django.contrib import admin
 from django.urls import path
@@ -19,7 +19,7 @@ from django.urls import re_path
 
 from . import views
 
-app_name='blog'
+app_name='mainsite'
 urlpatterns = [
     path('',views.home_page,name='homepage'),
     path('<post_name>/',views.show_post,name='post'),

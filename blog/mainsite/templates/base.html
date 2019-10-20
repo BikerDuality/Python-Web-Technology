@@ -7,11 +7,9 @@
    {% block title %}{% endblock %}
  </title>
 <!--使用block指令设置替换区域名称和位置-->
-<link rel="stylesheet"
-href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script  src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script  src=
-"http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script  src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -27,10 +25,10 @@ href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
                     </div>
                     <div class='panel-body'>
                         <div class='list-group'>
-                          <a href="{%url 'blog:homepage'%}" class='list-group-item'>HOME</a>
+                          <a href="{%url 'mainsite:homepage'%}" class='list-group-item'>HOME</a>
                           <a href="/admin" class='list-group-item'>管理页面 </a>
-                          <a href="{%url 'blog:homepage'%}" class='list-group-item'>实时新闻</a>
-                          <a href="{%url 'blog:homepage'%}" class='list-group-item'>电视新闻</a>
+                          <a href="{%url 'mainsite:homepage'%}" class='list-group-item'>实时新闻</a>
+                          <a href="{%url 'mainsite:homepage'%}" class='list-group-item'>电视新闻</a>
                         </div>
                     </div>
                 </div>

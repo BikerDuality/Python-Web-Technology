@@ -6,7 +6,7 @@
 {% block content %}
     {% for post in posts %}
         <p style='font-size: 14pt;font-weight: bold;'>
-            <a href="{%url 'blog:post' post.slug%}">{{post.title}}</a>
+            <a href="{%url 'mainsite:post' post.slug%}">{{post.title}}</a>
         </p>
     {% endfor %}
 {% endblock %}

@@ -24,9 +24,9 @@ def post_like_post(request,post_name):
     post=get_object_or_404(Post,slug=post_name)
     post.like_count+=1
     post.save()
-    return HttpResponseRedirect(reverse('blog:post', args=(post_name,)))
+    return HttpResponseRedirect(reverse('mainsite:post', args=(post_name,)))
 def post_dislike_post(request,post_name):
     post=get_object_or_404(Post,slug=post_name)
     post.like_count-=1
     post.save()
-    return HttpResponseRedirect(reverse('blog:post', args=(post_name,)))
+    return HttpResponseRedirect(reverse('mainsite:post', args=(post_name,)))
