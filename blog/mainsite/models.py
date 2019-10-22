@@ -6,7 +6,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     title=models.CharField(max_length=200)
-    slug=models.CharField(max_length=200)
+    slug=models.SlugField()
     body=models.TextField()
     pub_date=models.DateTimeField(default=timezone.now)
     like_count=models.IntegerField(default=0)
