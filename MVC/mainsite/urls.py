@@ -19,8 +19,10 @@ from . import views
 
 app_name='mainsite'
 urlpatterns = [
-    path('',views.home_page,name='homepage'),
-    path('<post_name>/',views.show_post,name='post'),
-    path('<post_name>/like/',views.post_like_post,name='post_like_post'),
-    path('<post_name>/dislike/',views.post_dislike_post,name='post_dislike_post'),
+    path('',views.homepage,name='homepage'),
+    path('about/',views.about,name='about'),
+    path('list/',views.show_list,name='list'),
+    path('list/order=<order>/',views.show_list,name='order_list'),
+    path('list/filter=<filter>/',views.show_list,name='filter_list'),
+    path('list/<sku>/',views.detail,name='detail'),
 ]

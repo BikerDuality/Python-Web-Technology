@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+   <meta charset='utf-8'>
+   <title>
+   欢迎来到我的网站
+   </title>
+      <style>
+          .bandlist li
+          {
+              #display: inline-block;
+              margin-right: 5px;
+          }
+      </style>
+  </head>
+  <body>
+   <h2>欢迎来到我的网站</h2>
+   <hr>
+   <ul>
+    <li><a href="{%url 'mainsite:list'%}">二手手机列表</a>
+        <ul class="bandlist">
+            <li><a href="{%url 'mainsite:filter_list' 'Sony'%}">Sony</a></li>
+            <li><a href="{%url 'mainsite:filter_list' 'SamSung'%}">SamSung</a></li>
+            <li><a href="{%url 'mainsite:filter_list' 'HTC'%}">HTC</a></li>
+        </ul>
+     </li>
+	<li><a href="{%url 'mainsite:about'%}">关于我</a></li>
+   </ul>
+   <em>今日佳句：{{quote}}</em>
+  </body>
+  </html>
