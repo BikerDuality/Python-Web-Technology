@@ -20,7 +20,9 @@ from . import views
 app_name='mainsite'
 urlpatterns = [
     path('',views.home_page,name='homepage'),
-    path('<post_name>/',views.show_post,name='post'),
-    path('<post_name>/like/',views.post_like_post,name='post_like_post'),
-    path('<post_name>/dislike/',views.post_dislike_post,name='post_dislike_post'),
+    path('<slug:post_slug>/',views.show_post,name='post'),
+    path('<slug:post_slug>/like/',views.post_like_post,name='post_like_post'),
+    path('<slug:post_slug>/dislike/',views.post_dislike_post,name='post_dislike_post'),
+    path('<int:a>+<int:b>=/',views.sum),
+    path('trans/<int:n><type>/',views.trans),
 ]
