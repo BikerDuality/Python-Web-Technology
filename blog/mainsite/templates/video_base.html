@@ -1,0 +1,40 @@
+﻿<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	.navbar-brand{
+	   padding:0 15px;
+	}
+	</style>
+</head>
+<body>
+    <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+            <div class='navbar-header' >
+                <div class='navbar-brand' align=center >
+                    {% load staticfiles %}
+                    <img src="{% static "mainsite/Cycling_Icon_BG.png" %}" height=100% >
+                    
+                </div>
+            </div>
+            {% block menu %}{% endblock %} 
+			
+        </div>
+    </nav>
+	
+	正在播放 {% block video_title %}{% endblock %}
+	
+    {% block content %}{% endblock %}
+	
+    <div class='panel panel-default'>
+      <div class='panel-footer'><em>{{ now }}</em></div>
+    </div>
+  {% include "footer.html" %}
+</body>
+</html>

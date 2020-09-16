@@ -1,0 +1,25 @@
+{% extends 'video_base.html' %}
+{% block title %}电影播放{% endblock %}
+{% block video_title %}{{video.title}}{% endblock %}
+{% block menu %}
+	<ul class='nav navbar-nav'>
+		<li><a href="{%url 'mainsite:homepage'%}">主页</a></li>
+		{% for video in video_list %}
+			<li>
+				<a href="{% url 'mainsite:video' video.slug%}">
+					{{video.title}}
+				</a>
+			</li>
+		{% endfor %}
+		<!-- <li>
+			<a href="#">英文电影</a>
+		</li> -->
+	</ul>
+{% endblock %}
+{% block content %}
+	<div class='conatiner'>
+		<div id='video_code' align='center'>
+			<iframe src="{{video.src}}" width=1416 height=797 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+		</div>
+	</div>
+{% endblock %}
